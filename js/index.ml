@@ -201,8 +201,6 @@ let run_rom_bytes_with_audio ctx image_data rom_bytes =
       State.audio_context := Some ctx;
       ctx
   in
-  let sample_rate = Web_audio.AudioContext.sample_rate audio_ctx in
-  Console.(log [str (Printf.sprintf "Audio: %d Hz, buffer: %d" sample_rate processor_buffer_size)]);
   (* Create script processor for audio callback *)
   let processor = Web_audio.AudioContext.create_script_processor
       audio_ctx
