@@ -224,9 +224,7 @@ let run_rom_bytes_with_audio ctx image_data rom_bytes =
         | Frame_ended fb ->
           draw_framebuffer ctx image_data fb;
           update_fps_counter fps_counter ~on_tick:(fun fps ->
-            let audio_fill = Apu.samples_available apu in
-            let fill_pct = 100. *. float_of_int audio_fill /. float_of_int buffer_capacity in
-            let fps_str = Printf.sprintf "%.1f (buf: %.0f%%)" fps fill_pct in
+            let fps_str = Printf.sprintf "%.1f" fps in
             let fps_el = find_el_by_id "fps" in
             El.set_children fps_el [El.txt (Jstr.v fps_str)])
       end
