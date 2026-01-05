@@ -191,8 +191,8 @@ let run_rom_bytes_with_audio ctx image_data rom_bytes =
   let apu = C.get_apu t in
   let sample_rate = Apu.sample_rate apu in
   let buffer_capacity = Apu.buffer_capacity apu in
-  (* Use half capacity for script processor buffer *)
-  let processor_buffer_size = buffer_capacity / 2 in
+  (* Use a third of the capacity for script processor buffer *)
+  let processor_buffer_size = buffer_capacity / 3 in
   (* Create audio context with APU's sample rate *)
   let audio_ctx = match !State.audio_context with
     | Some ctx -> ctx
