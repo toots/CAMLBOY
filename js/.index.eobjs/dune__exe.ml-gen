@@ -8,6 +8,3 @@ module Index = Dune__exe__Index
 
 (** @canonical Dune__exe.My_ev *)
 module My_ev = Dune__exe__My_ev
-
-(** @canonical Dune__exe.Web_audio *)
-module Web_audio = Dune__exe__Web_audio
